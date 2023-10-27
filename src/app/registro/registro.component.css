@@ -1,0 +1,77 @@
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 550px;
+    margin: 0 auto;
+  }
+  
+  .register-box {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  input[type="url"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  button {
+    width: 85%;
+    padding: 10px;
+    background-color: #3cb043;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+  }
+  
+  button:hover {
+    background-color: #2b8031;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #3cb043;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
