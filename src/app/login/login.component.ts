@@ -12,6 +12,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  correoPlaceholder: string = 'Correo Electrónico';
+  contrasenaPlaceholder: string = 'Contraseña';
   loginForm!: FormGroup;
 
   constructor(
@@ -44,39 +46,25 @@ export class LoginComponent {
       const correo = this.loginForm.get('correo')?.value;
       const contraseña = this.loginForm.get('contraseña')?.value;
 
-      this.apiService.obtenerToken(correo).subscribe(
+      const credentials = [correo, contraseña];
+
+      this.apiService.iniciarSesion(credentials).subscribe(
         (response: any) => {
           const token = response.token;
           console.log('Token recibido:', token);
 
           this.authService.setToken(token);
 
-          const credentials = [correo, contraseña];
-
-          this.apiService.iniciarSesion(credentials).subscribe(
-            (response: any) => {
-              this.snackBar.open('Inicio de sesión exitoso.', 'Cerrar', {
-                duration: 3000,
-              });
-              this.router.navigate(['/inicio']);
-            },
-            (error: any) => {
-              console.log('credenciales', credentials);
-              console.error('Error de inicio de sesión:', error);
-              this.snackBar.open(
-                'Error de inicio de sesión: ' + error.error.message,
-                'Cerrar',
-                {
-                  duration: 3000,
-                }
-              );
-            }
-          );
+          this.snackBar.open('Inicio de sesión exitoso.', 'Cerrar', {
+            duration: 3000,
+          });
+          this.router.navigate(['/inicio']);
         },
         (error: any) => {
-          console.error('Error al obtener el token:', error);
+          console.log('credenciales', credentials);
+          console.error('Error de inicio de sesión:', error);
           this.snackBar.open(
-            'Error al obtener el token: ' + error.error.message,
+            'Error de inicio de sesión: ' + error.error.message,
             'Cerrar',
             {
               duration: 3000,
