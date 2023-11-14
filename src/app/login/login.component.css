@@ -85,7 +85,24 @@
   align-items: flex-start;
 }
 
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px; /* Ajusta según necesidad */
+  color: #666; /* Color del ícono */
+  margin-top: 15px;
+}
+
 .full-width input {
+  padding-left: 40px;
   width: 95%; /* Asegura que el input ocupe todo el ancho disponible */
   /* Resto de estilos para el input */
 }
@@ -98,6 +115,8 @@
 .full-width small {
   color: #b94a48; /* Un tono de rojo menos llamativo */
   font-size: 14px; /* Tamaño adecuado para los mensajes de error */
+  align-self: flex-start; /* Alinea a la izquierda */
+  margin-top: 5px; /* Espaciado entre el input y el mensaje de error */
 }
 
 .submit-button {
@@ -119,8 +138,16 @@ button {
   font-size: 18px;
 }
 
-button:hover {
-  background-color: darken(#3cb043, 25%);
+button:enabled {
+  background-color: #3cb043; /* Color de fondo cuando el botón está activo */
+  color: #fff; /* Color del texto, elige un color que tenga buen contraste con el fondo */
+}
+
+button:enabled:hover {
+  background-color: darken(
+    #3cb043,
+    10%
+  ); /* Oscurece el color al pasar el mouse */
 }
 
 .form-group {
