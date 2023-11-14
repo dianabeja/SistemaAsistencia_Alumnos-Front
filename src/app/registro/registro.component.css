@@ -1,30 +1,38 @@
 .container {
   display: flex;
-  min-height: 100vh;
+  min-height: 100vh; /* Altura completa de la ventana */
 }
 
 .left-column {
-  flex: 1;
+  flex: 1; /* Ocupa la mitad del espacio */
   background: linear-gradient(#a8e063, #3cb043, #2b8031);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  text-align: center; /* Centra el texto */
 }
 
 .universidad-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
+  display: flex; /* Utiliza Flexbox */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente en la columna */
+  text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .universidad-imagen {
-  max-width: 20%;
-  height: auto;
-  margin-right: 20px;
+  max-width: 20%; /* Reduce el tamaño de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-right: 20px; /* Añade espacio entre la imagen y el texto */
+  /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* X-offset, Y-offset, Blur-radius, Spread-radius, Color */
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.universidad-imagen:hover,
+.universidad-texto:hover,
+.sistema-texto:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  transition: transform 0.3s ease-in-out; /* Suaviza la transición */
 }
 
 .texts {
@@ -51,82 +59,75 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* X-offset, Y-offset, Blur-radius, Color */
 }
 
-.universidad-imagen:hover,
-.universidad-texto:hover,
-.sistema-texto:hover {
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  transition: transform 0.3s ease-in-out; /* Suaviza la transición */
-}
 .right-column {
-  flex: 0.7;
+  flex: 0.7; /* Ocupa la otra mitad del espacio */
   display: flex;
   justify-content: center;
-  align-items: center;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  align-items: center; /* Centra el contenido del formulario */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); /* Sombra hacia la izquierda */
 }
 
-.login-container {
+.registro-container {
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
   font-family: "Roboto", sans-serif;
-  text-align: center;
 }
 
 .full-width {
   width: 100%;
-  margin-bottom: 15px;
-  margin-top: 20px;
-  justify-content: center;
+}
+
+.file-input {
+  margin: 20px 0;
+}
+
+.file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.file-label:hover {
+  background-color: #ddd;
+}
+
+.image-preview {
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.mat-icon {
+  cursor: pointer;
+}
+
+.submit-button,
+.form-group {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.input-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  width: 100%;
-}
-
-.input-icon {
-  position: absolute;
-  left: 10px;
-  font-size: 20px; /* Ajusta según necesidad */
-  color: #666; /* Color del ícono */
-  margin-top: 15px;
-}
-
-.full-width input {
-  padding-left: 40px;
-  width: 95%; /* Asegura que el input ocupe todo el ancho disponible */
-  /* Resto de estilos para el input */
-}
-
-.full-width div {
-  width: 100%; /* Asegura que el contenedor del mensaje de error ocupe todo el ancho disponible */
-  text-align: left; /* Alinea el texto a la izquierda */
-}
-
-.full-width small {
-  color: #b94a48; /* Un tono de rojo menos llamativo */
-  font-size: 14px; /* Tamaño adecuado para los mensajes de error */
-  align-self: flex-start; /* Alinea a la izquierda */
-  margin-top: 5px; /* Espaciado entre el input y el mensaje de error */
+  justify-content: center; /* Centra horizontalmente en su contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
 
 .submit-button {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   margin-top: 20px;
 }
 
+.form-group {
+  margin-bottom: 15px;
+  margin-top: 20px; /* Añade un poco de espacio arriba del texto */
+}
+
 button {
+  width: 85%;
   padding: 10px;
   background-color: #3cb043;
   color: #fff;
@@ -134,8 +135,8 @@ button {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-family: Arial, sans-serif; /* Cambia la fuente del botón */
+  font-size: 18px; /* Cambia el tamaño del texto del botón */
 }
 
 button:enabled {
@@ -150,13 +151,9 @@ button:enabled:hover {
   ); /* Oscurece el color al pasar el mouse */
 }
 
-.form-group {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente en su contenedor */
-  width: 100%;
-  margin-bottom: 15px;
-  margin-top: 20px;
-}
+/*button:hover {
+  background-color: #2b8031;
+}*/
 
 h1 {
   font-size: 35px; /* Aumenta el tamaño del encabezado "Iniciar Sesión" */
@@ -176,15 +173,44 @@ a:hover {
   text-decoration: underline;
 }
 
-input[type="email"],
-input[type="password"] {
-  padding: 10px;
-  border: 1px solid #ccc;
+.file-input {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 56px; /* Altura estándar de los campos de entrada Material */
+  background-color: #eee;
+  cursor: pointer;
   border-radius: 4px;
-  margin-top: 5px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  width: 100%;
+  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  justify-content: left; /* Alinea el texto a la izquierda */
+  box-sizing: border-box;
+}
+
+.file-label mat-icon {
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 15px; /* Espaciado entre campos */
+  position: relative; /* Para posicionar el icono */
+}
+
+.input-icon {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Material Icons";
+  margin-bottom: 18px;
 }
 
 /* Estilos responsivos específicos para dispositivos móviles */
@@ -223,7 +249,7 @@ input[type="password"] {
     box-shadow: none; /* Elimina la sombra */
   }
 
-  .login-container {
+  .registro-container {
     margin-top: 20px; /* Añade espacio arriba del formulario */
   }
 
