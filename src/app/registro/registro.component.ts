@@ -4,6 +4,7 @@ import { RegistroService } from '../services/registro.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FirebaseServiceService } from '../services/firebase-service.service';
+import { NavDisplayService } from '../services/nav-display.service';
 
 @Component({
   selector: 'app-registro',
@@ -23,10 +24,12 @@ export class RegistroComponent implements OnInit {
     private registroService: RegistroService,
     private snackBar: MatSnackBar,
     private router: Router,
-    private firebaseService: FirebaseServiceService
+    private firebaseService: FirebaseServiceService,
+    private navDisplayService: NavDisplayService
   ) {}
 
   ngOnInit() {
+    this.navDisplayService.setShowNav(false);
     this.registroForm = this.fb.group({
       matricula: ['', [Validators.required, Validators.pattern(/^S\d{8}$/)]],
       correo: [

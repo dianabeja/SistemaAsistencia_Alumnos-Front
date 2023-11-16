@@ -1,12 +1,13 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'AIzaSyDvhY9Eix_4HYNY1MWZ_lzh3SuhOX9s27Y',
-    authDomain: 'siae-alumnos.firebaseapp.com',
-    projectId: 'siae-alumnos',
-    storageBucket: 'siae-alumnos.appspot.com',
-    messagingSenderId: '927940350421',
-    appId: '1:927940350421:web:dadc87ddecd7801c4d2d5c',
+    apiKey: 'AIzaSyDFtWhGBepZEtfyg92spnJmMubgtzKI6hA',
+    authDomain: 'siae-dd32c.firebaseapp.com',
+    projectId: 'siae-dd32c',
+    storageBucket: 'siae-dd32c.appspot.com',
+    messagingSenderId: '669983183988',
+    appId: '1:669983183988:web:e1df748c1e2569a5a12d21',
+    measurementId: 'G-4EWSFCJS90',
     // No es necesario agregar measurementId si no lo estás usando
   },
 };
