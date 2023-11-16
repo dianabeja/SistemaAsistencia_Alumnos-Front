@@ -1,0 +1,14 @@
+<nav *ngIf="navDisplayService.showNav$ | async">
+  <div class="nav-content">
+    <div class="nav-logo">
+      <img src="../../assets/logouv.png" alt="Logo UV" class="nav-logo-img" />
+      <span class="nav-logo-text">Universidad Veracruzana</span>
+    </div>
+    <button class="nav-toggle" (click)="toggleNav()">☰</button>
+    <ul class="nav-buttons" [class.active]="navOpen">
+      <li><a routerLink="/inicio">Página Principal</a></li>
+      <li><a routerLink="/materias">Materias</a></li>
+      <li><button (click)="logout()">Cerrar Sesión</button></li>
+    </ul>
+  </div>
+</nav>

@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { corr } from 'mathjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NavDisplayService } from '../services/nav-display.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   correoPlaceholder: string = 'Correo Electrónico';
   contrasenaPlaceholder: string = 'Contraseña';
   loginForm!: FormGroup;
@@ -21,7 +22,8 @@ export class LoginComponent {
     private apiService: ApiService,
     private authService: AuthService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private navDisplayService: NavDisplayService
   ) {
     this.loginForm = this.fb.group({
       correo: [
@@ -30,6 +32,10 @@ export class LoginComponent {
       ],
       contraseña: ['', [Validators.required, Validators.minLength(8)]],
     });
+  }
+
+  ngOnInit() {
+    this.navDisplayService.setShowNav(false);
   }
 
   onSubmit() {

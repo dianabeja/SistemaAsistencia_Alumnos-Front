@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { RegistroComponent } from './registro/registro.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RegistroComponent } from './registro/registro.component';
     LoginComponent,
     InicioComponent,
     RegistroComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,

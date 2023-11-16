@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-color: #f5f5f5; /* Gris claro para el fondo */
+  height: 100vh; /* Altura completa de la pantalla */
+  padding: 20px;
+}
+
+.info-block {
+  background-color: #ffffff; /* Fondo blanco para los divs */
+  border: 1px solid #ccc;
+  /*border-radius: 10px;*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 25px;
+  padding: 20px;
+  text-align: center;
+  width: 340px;
+  height: auto; /*370 px*/
+  display: flex;
+  flex-direction: column; /* Alinea el contenido en vertical */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.profile-image {
+  width: 236px; /* Ajusta el tamaño */
+  height: 236px; /* Ajusta el tamaño */
+  border-radius: 50%; /* Hace la imagen redonda */
+  object-fit: cover; /* Asegura que el contenido se ajuste sin deformarse */
+  margin-bottom: 15px;
+}
+
+.universidad-image {
+  width: 278px;
+  height: 89px;
+  margin: 0;
+}
+
+.qr-code {
+  width: 234px; /* Aumenta el tamaño del QR */
+  height: 247px; /* Aumenta el tamaño del QR */
+  margin: 0;
+}
+
+.nombre,
+.matricula,
+.fecha,
+.presente {
+  margin: 5px 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+.programa,
+.lugar,
+.escuela,
+.matricula,
+.presente {
+  font-size: 24px; /* Aumenta el tamaño del texto */
+  font-weight: 500; /* Hace el texto más grueso */
+  color: #3cb043; /* Aplica el color verde específico */
+}
+
+.programa,
+.lugar,
+.escuela {
+  margin: 0;
+}
+
+.licenciatura,
+.facultad,
+.campus {
+  margin: 10px 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+/* Estilos existentes aquí... */
+
+/* Media query para pantallas de tamaño tablet y móvil */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start; /* Asegúrate de que los elementos comiencen desde la parte superior */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 10px; /* Ajusta el padding para más espacio en los bordes */
+    overflow-y: auto; /* Permite desplazamiento vertical si es necesario */
+    height: auto; /* Ajusta la altura para que sea automática y contenga todo el contenido */
+    min-height: 100vh; /* Asegura que el contenedor sea al menos tan alto como la ventana */
+  }
+
+  .info-block {
+    width: 100%; /* Asegura que el bloque ocupe todo el ancho disponible */
+    margin: 10px 0; /* Aumenta el margen para mejor separación */
+    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho */
+  }
+
+  .profile-image,
+  .universidad-image,
+  .qr-code {
+    max-width: 100%; /* Asegura que las imágenes no sobrepasen el ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto de las imágenes */
+    /*margin: 10px auto; /* Centra las imágenes */
+  }
+}
