@@ -1,0 +1,11 @@
+<div class="outer-container">
+  <div class="container">
+    <div class="materia" *ngFor="let materia of materias">
+      <h3>{{ materia.nombre }}</h3>
+      <p>Turno: {{ materia.turno }}</p>
+      <p>NRC: {{ materia.nrc }}</p>
+      <p>Grupo: {{ materia.grupo }}</p>
+      <p>Horas semanales: {{ materia.horasemana }}</p>
+    </div>
+  </div>
+</div>
