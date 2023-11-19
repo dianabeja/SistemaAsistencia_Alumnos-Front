@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { RegistroComponent } from './registro/registro.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MateriasComponent } from './materias/materias.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     InicioComponent,
     RegistroComponent,
     NavBarComponent,
+    MateriasComponent,
   ],
   imports: [
     BrowserModule,

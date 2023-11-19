@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.outer-container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh; /* Toma toda la altura de la ventana */
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.materia {
+  background-color: #ffffff;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  flex-basis: calc(30% - 20px); /* 3 elementos por fila, ajustando el margen */
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden; /* Previene que el contenido desborde el div */
+}
+
+.materia h3 {
+  color: #3cb043;
+  font-size: 20px;
+  margin: 10px 0;
+  white-space: nowrap; /* Mantiene el título en una línea */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+}
+
+.materia p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: flex-start; /* Alinea los divs al inicio */
+  }
+
+  .materia {
+    flex-basis: 100%; /* Ocupa el 100% del ancho disponible */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho del div */
+  }
+
+  .materia h3 {
+    white-space: normal; /* Permite que el texto ocupe más de una línea */
+    overflow: visible; /* Muestra el texto normalmente */
+    text-overflow: clip; /* Evita que el texto se corte con puntos suspensivos */
+  }
+}
