@@ -1,0 +1,19 @@
+<div>
+  <h2>Asistencia para la Materia: {{ nombreMateria }}</h2>
+  <p>NRC: {{ nrc }}</p>
+  <p>Matrícula del Estudiante: {{ matricula }}</p>
+  <p>Horas por Semana: {{ horasSemana }}</p>
+  <div>
+    <h3>Asistencias</h3>
+    <ul>
+      <li *ngFor="let fecha of fechasAsistencia">Fecha: {{ fecha.fecha }}</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Inasistencias</h3>
+    <ul>
+      <li *ngFor="let fecha of fechasInasistencia">Fecha: {{ fecha.fecha }}</li>
+    </ul>
+  </div>
+</div>
