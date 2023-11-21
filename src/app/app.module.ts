@@ -20,6 +20,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { RegistroComponent } from './registro/registro.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MateriasComponent } from './materias/materias.component';
+import { AsistenciaComponent } from './asistencia/asistencia.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MateriasComponent } from './materias/materias.component';
     RegistroComponent,
     NavBarComponent,
     MateriasComponent,
+    AsistenciaComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { MateriasComponent } from './materias/materias.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     ReactiveFormsModule,
     MatFormFieldModule,

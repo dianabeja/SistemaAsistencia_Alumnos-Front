@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MateriasService } from '../services/materias.service';
 import { AuthService } from '../services/auth.service';
 import { NavDisplayService } from '../services/nav-display.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-materias',
@@ -14,8 +15,16 @@ export class MateriasComponent implements OnInit {
   constructor(
     private materiasService: MateriasService,
     private authService: AuthService,
-    private navDisplayService: NavDisplayService
+    private navDisplayService: NavDisplayService,
+    private router: Router
   ) {}
+
+  // Método para manejar el clic en una materia
+  verAsistencia(nrc: number, nombreMateria: string, horasSemana: number): void {
+    this.router.navigate(['/asistencia'], {
+      queryParams: { nrc, nombre: nombreMateria, horasemana: horasSemana },
+    });
+  }
 
   ngOnInit(): void {
     this.navDisplayService.setShowNav(true);

@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.container {
+  background-color: #f4f4f4; /* Color de fondo de la página */
+  font-family: "Roboto", sans-serif; /* Fuente Roboto para toda la página */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 45px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 45px;
+}
+
+.titulo-materia,
+.titulo,
+.etiqueta-tabla {
+  color: #3cb043; /* Cambia el color a verde */
+}
+
+.titulo-materia {
+  margin-top: 0%;
+}
+
+.etiqueta-tabla {
+  font-size: 24px;
+}
+
+.titulo {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.contenido {
+  font-size: 54px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.asistencias,
+.examen {
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff; /* Fondo blanco para resaltar */
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  margin-bottom: 60px;
+  width: 340px;
+  height: 165px;
+}
+
+.lista {
+  flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+table {
+  width: 100%;
+  background-color: #ffffff; /* Fondo blanco para la tabla */
+  border-collapse: collapse; /* Colapsar bordes de la tabla */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  font-size: 20px;
+}
+
+th {
+  background-color: #efefef; /* Color de fondo para cabeceras */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Color de fondo para filas alternas */
+}
+
+.texto-regresar {
+  font-family: "Roboto", sans-serif;
+  color: #3cb043; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado debajo del texto */
+  cursor: pointer; /* Cambia el estilo del cursor a un puntero */
+  font-size: 24px; /* Tamaño del texto */
+  font-weight: 600;
+}
+
+.texto-regresar:hover {
+  color: #2b8031; /* Cambia el color al pasar el ratón por encima */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 10px; /* Ajusta el padding para más espacio en los bordes */
+  }
+
+  .info {
+    width: 100%; /* Asegura que el contenedor info ocupe todo el ancho disponible */
+    align-items: center; /* Centra el contenido de info */
+    margin-right: 0%;
+    margin-top: 20px;
+  }
+
+  .contenido {
+    font-size: 44px;
+  }
+
+  .asistencias,
+  .examen {
+    width: 100%; /* Ajusta el ancho de los divs asistencias y examen al ancho disponible */
+    margin-bottom: 15px; /* Espaciado entre elementos */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+  }
+
+  .lista {
+    order: -1; /* Coloca la lista después de los divs asistencias y examen */
+    width: 100%; /* Ajusta el ancho de la tabla al ancho disponible */
+  }
+
+  .titulo-materia {
+    text-align: left; /* Centra el título de la materia */
+    margin-top: 15px; /* Espaciado por encima del título */
+  }
+
+  table {
+    box-sizing: border-box; /* Incluye padding y borde en el ancho de la tabla */
+  }
+
+  .texto-regresar {
+    display: block; /* Asegura que el botón sea visible */
+    order: 3; /* Posiciona el botón después de los divs asistencias y examen */
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    text-align: center; /* Alinea el texto al centro */
+    margin-top: 20px; /* Espacio arriba del botón */
+  }
+}
