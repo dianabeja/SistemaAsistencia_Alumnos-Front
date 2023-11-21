@@ -43,7 +43,7 @@ import { AsistenciaComponent } from './asistencia/asistencia.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     ReactiveFormsModule,
     MatFormFieldModule,
