@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="left-column">
+    <div class="universidad-content">
+      <img
+        src="../../assets/logouv.png"
+        alt="UV Logo"
+        class="universidad-imagen"
+      />
+      <div class="texts">
+        <p class="universidad-texto">Universidad Veracruzana</p>
+        <p class="sistema-texto">Sistema Integral de Asistencia Estudiantil</p>
+      </div>
+    </div>
+  </div>
+  <div class="right-column">
+    <div class="login-container">
+      <h1>Iniciar Sesión</h1>
+      <!-- Agrega el formulario aquí -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="full-width">
+          <div class="input-wrapper">
+            <div class="input-icon material-icons">email</div>
+            <input
+              type="email"
+              formControlName="correo"
+              placeholder="Correo Electrónico"
+              (focus)="correoPlaceholder = 'S20020028@estudiantes.uv.mx'"
+              (blur)="correoPlaceholder = 'Correo Electrónico'"
+              [attr.placeholder]="correoPlaceholder"
+              required
+            />
+            <div
+              *ngIf="
+                loginForm.controls['correo'].invalid &&
+                loginForm.controls['correo'].touched
+              "
+            >
+              <small *ngIf="loginForm.controls['correo'].errors?.['required']"
+                >El correo es obligatorio.</small
+              >
+              <small *ngIf="loginForm.controls['correo'].errors?.['pattern']"
+                >Formato de correo no válido.</small
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="full-width">
+          <div class="input-wrapper">
+            <div class="input-icon material-icons">lock</div>
+            <input
+              type="password"
+              formControlName="contraseña"
+              placeholder="Contraseña"
+              (focus)="contrasenaPlaceholder = '12345678'"
+              (blur)="contrasenaPlaceholder = 'Contraseña'"
+              [attr.placeholder]="contrasenaPlaceholder"
+              required
+            />
+
+            <div
+              *ngIf="
+                loginForm.controls['contraseña'].invalid &&
+                loginForm.controls['contraseña'].touched
+              "
+            >
+              <small
+                *ngIf="loginForm.controls['contraseña'].errors?.['required']"
+                >La contraseña es obligatoria.</small
+              >
+              <small
+                *ngIf="loginForm.controls['contraseña'].errors?.['minlength']"
+                >La contraseña debe tener al menos 8 caracteres.</small
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="submit-button">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="loginForm.invalid"
+            class="submit-button"
+          >
+            Iniciar Sesión
+          </button>
+        </div>
+      </form>
+      <!-- Fin del formulario -->
+      <div class="form-group">
+        <a routerLink="/registro">¿Olvidaste tu contraseña?</a>
+      </div>
+      <div class="form-group">
+        <p>¿No tienes una cuenta? <a routerLink="/registro">Regístrate</a></p>
+      </div>
+    </div>
+  </div>
+</div>

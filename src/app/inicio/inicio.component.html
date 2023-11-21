@@ -1,0 +1,34 @@
+<div class="container" *ngIf="estudianteData">
+  <!-- Primer div: Imagen de perfil, nombre y matrícula -->
+  <div class="info-block">
+    <img
+      [src]="estudianteData.url_imagen"
+      alt="Imagen de perfil"
+      class="profile-image"
+    />
+    <p class="nombre">{{ estudianteData.nombre }}</p>
+    <p class="matricula">{{ estudianteData.matricula }}</p>
+  </div>
+
+  <!-- Segundo div: Imagen universidad, código QR, fecha y frase '¡Presente!' -->
+  <div class="info-block">
+    <img
+      src="../../assets/universidad.png"
+      alt="Universidad"
+      class="universidad-image"
+    />
+    <img *ngIf="qrCodeUrl" [src]="qrCodeUrl" alt="Código QR" class="qr-code" />
+    <p class="fecha">{{ fechaActual }}</p>
+    <p class="presente">¡Presente!</p>
+  </div>
+
+  <!-- Tercer div: Licenciatura, facultad y campus -->
+  <div class="info-block">
+    <p class="programa">Programa Educativo</p>
+    <p class="licenciatura">{{ estudianteData.licenciatura }}</p>
+    <p class="lugar">Facultad</p>
+    <p class="facultad">Negocios y Tecnologías</p>
+    <p class="escuela">Campus</p>
+    <p class="campus">Ixtaczoquitlan</p>
+  </div>
+</div>

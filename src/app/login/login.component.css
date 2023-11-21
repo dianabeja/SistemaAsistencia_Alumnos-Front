@@ -1,0 +1,244 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-column {
+  flex: 1;
+  background: linear-gradient(#a8e063, #3cb043, #2b8031);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.universidad-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.universidad-imagen {
+  max-width: 20%;
+  height: auto;
+  margin-right: 20px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.texts {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.universidad-texto {
+  color: #fff; /* Cambia el color del texto si es necesario */
+  font-size: 35px; /* Ajusta el tamaño del texto */
+  font-weight: bold; /* Hace el texto más grueso */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* X-offset, Y-offset, Blur-radius, Color */
+}
+
+.sistema-texto {
+  color: #fff; /* Cambia el color del texto si es necesario */
+  font-size: 20px; /* Ajusta el tamaño del texto */
+  font-weight: normal; /* Puedes ajustar el peso de la fuente si es necesario */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* X-offset, Y-offset, Blur-radius, Color */
+}
+
+.universidad-imagen:hover,
+.universidad-texto:hover,
+.sistema-texto:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  transition: transform 0.3s ease-in-out; /* Suaviza la transición */
+}
+.right-column {
+  flex: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 90%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px; /* Ajusta según necesidad */
+  color: #666; /* Color del ícono */
+  margin-top: 15px;
+}
+
+.full-width input {
+  padding-left: 40px;
+  width: 95%; /* Asegura que el input ocupe todo el ancho disponible */
+  /* Resto de estilos para el input */
+}
+
+.full-width div {
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.full-width small {
+  color: #b94a48; /* Un tono de rojo menos llamativo */
+  font-size: 14px; /* Tamaño adecuado para los mensajes de error */
+  align-self: flex-start; /* Alinea a la izquierda */
+  margin-top: 5px; /* Espaciado entre el input y el mensaje de error */
+}
+
+.submit-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px;
+  background-color: #3cb043;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+button:enabled {
+  background-color: #3cb043; /* Color de fondo cuando el botón está activo */
+  color: #fff; /* Color del texto, elige un color que tenga buen contraste con el fondo */
+}
+
+button:enabled:hover {
+  background-color: darken(
+    #3cb043,
+    10%
+  ); /* Oscurece el color al pasar el mouse */
+}
+
+.form-group {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente en su contenedor */
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 35px; /* Aumenta el tamaño del encabezado "Iniciar Sesión" */
+  margin-bottom: 30px;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Cambia la fuente del encabezado */
+}
+
+a {
+  text-decoration: none;
+  color: #3cb043;
+  font-family: Arial, sans-serif; /* Cambia la fuente de los enlaces */
+  font-size: 15px; /* Cambia el tamaño del texto de los enlaces */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Estilos responsivos específicos para dispositivos móviles */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Cambia la disposición a columna */
+  }
+
+  .left-column {
+    order: -1; /* Coloca la columna izquierda arriba */
+    display: flex; /* Vuelve a mostrar la columna izquierda */
+    flex-direction: row; /* Cambia la dirección a fila para alinear horizontalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    padding: 10px 0; /* Agrega algo de relleno arriba y abajo */
+    background: linear-gradient(
+      #a8e063,
+      #3cb043,
+      #2b8031
+    ); /* Mantiene el fondo */
+  }
+
+  .universidad-imagen {
+    width: 50px; /* Reduce el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  .universidad-texto,
+  .sistema-texto {
+    font-size: 14px; /* Reduce el tamaño del texto */
+  }
+
+  .right-column {
+    width: 100%; /* Ocupa el ancho completo */
+    box-shadow: none; /* Elimina la sombra */
+  }
+
+  .login-container {
+    margin-top: 20px; /* Añade espacio arriba del formulario */
+  }
+
+  .input-wrapper {
+    margin-bottom: 10px; /* Reduce el espacio entre los campos de entrada */
+  }
+
+  .submit-button,
+  .form-group {
+    flex-direction: column; /* Alinea verticalmente los botones y enlaces */
+    align-items: center; /* Centra los elementos */
+  }
+
+  .submit-button button,
+  .form-group a {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    margin: 5px 0; /* Ajusta el margen para los elementos */
+  }
+}

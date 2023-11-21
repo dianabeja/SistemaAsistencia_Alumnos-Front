@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="info">
+    <a class="texto-regresar" (click)="volverAMaterias()">Regresar</a>
+    <div class="asistencias">
+      <h3 class="titulo">Asistencias</h3>
+      <p class="contenido">{{ totalAsistencias }} / {{ totalClases }}</p>
+    </div>
+    <div class="examen">
+      <h3 class="titulo">Tipo de examen</h3>
+      <p class="contenido">{{ derecho }}</p>
+    </div>
+  </div>
+  <div class="lista">
+    <h2 class="titulo-materia">{{ nombreMateria }}</h2>
+    <div *ngIf="listaCombinada.length === 0">
+      No hay registros de asistencias o inasistencias.
+    </div>
+    <div *ngIf="listaCombinada.length > 0">
+      <table>
+        <tr>
+          <th class="etiqueta-tabla">No</th>
+          <th class="etiqueta-tabla">Fecha</th>
+          <th class="etiqueta-tabla">Asistencia</th>
+        </tr>
+        <tr *ngFor="let item of listaCombinada; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ formatearFecha(item.fecha) }}</td>
+          <td>{{ item.asistencia }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

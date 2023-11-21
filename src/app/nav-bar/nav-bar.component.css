@@ -1,0 +1,139 @@
+nav {
+  background: linear-gradient(#a8e063, #3cb043, #2b8031);
+  padding: 10px 20px; /* Espaciado interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra ligera para dar profundidad */
+  width: 100%; /* Asegura que el nav ocupe todo el ancho */
+  box-sizing: border-box;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+  align-items: center; /* Alinea verticalmente los elementos */
+  padding: 0 20px; /* Agrega padding para evitar que los elementos toquen los bordes */
+}
+
+.nav-logo {
+  display: flex; /* Alinea los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-right: auto; /* Empuja todo lo demás hacia la derecha */
+}
+
+.nav-logo-img {
+  width: 53px;
+  height: 68px; /* Ajusta el tamaño de la imagen */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.nav-logo-text {
+  color: white; /* Color del texto */
+  font-size: 30px; /* Aumenta el tamaño del texto */
+  font-weight: 500; /* Hace el texto más grueso */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+nav ul {
+  list-style: none; /* Elimina los estilos de lista predeterminados */
+  display: flex; /* Alinea los elementos horizontalmente */
+  justify-content: space-between; /* Espacia los elementos uniformemente */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margen predeterminado */
+  margin-left: auto; /* Alinea los elementos de la lista a la derecha */
+}
+
+.nav-buttons {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.nav-buttons li {
+  margin-left: 62px;
+}
+
+.nav-buttons li a,
+.nav-buttons li button {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  /* Resto de tus estilos para enlaces y botones */
+}
+
+nav li {
+  margin: 0; /* Espaciado entre elementos de lista */
+}
+
+nav a,
+nav button {
+  color: white; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  font-size: 32px; /* Tamaño del texto */
+  font-family: "Roboto", sans-serif; /* Fuente */
+  font-weight: 400; /* Hace el texto más grueso */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+nav button {
+  background: none; /* Sin fondo */
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Cambia el cursor a una mano */
+  padding: 0; /* Sin espaciado interno */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Subraya al pasar el ratón por encima */
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-buttons {
+    display: none; /* Oculta los enlaces por defecto en pantallas pequeñas */
+    flex-direction: column; /* Alinea los elementos en columna */
+    position: absolute; /* Posición absoluta para el menú desplegable */
+    right: 40px; /* Posición a la derecha */
+    top: 65px; /* Posición debajo de la barra de navegación */
+    background-color: #3cb043; /* Fondo del menú desplegable */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el menú */
+    width: 200px; /* Ancho del menú desplegable */
+    align-items: flex-end;
+  }
+
+  .nav-buttons li {
+    display: none;
+    margin: 0;
+  }
+
+  .nav-buttons li a,
+  .nav-buttons li button {
+    font-size: 24px; /* Reduce el tamaño del texto para dispositivos móviles */
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    margin-top: 5px;
+  }
+
+  .nav-content {
+    padding-left: 0px; /* Reduce el padding del lado izquierdo para mover el logo más a la izquierda */
+  }
+
+  .nav-buttons.active li {
+    display: flex; /* Muestra los enlaces cuando está activo */
+    text-align: right;
+  }
+
+  .nav-toggle {
+    display: block; /* Muestra el botón de menú */
+    background: none; /* Sin fondo */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Estilo de cursor */
+    color: white; /* Color del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+  }
+}
