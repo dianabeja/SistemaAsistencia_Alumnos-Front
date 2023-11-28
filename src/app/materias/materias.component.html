@@ -1,5 +1,5 @@
 <div class="outer-container">
-  <div class="container">
+  <div *ngIf="materias.length > 0; else noMaterias" class="container">
     <div
       class="materia"
       *ngFor="let materia of materias"
@@ -12,4 +12,8 @@
       <p>Horas semanales: {{ materia.horasemana }}</p>
     </div>
   </div>
+
+  <ng-template #noMaterias>
+    <p>Lo sentimos por el momento usted no tiene ninguna materia registrada</p>
+  </ng-template>
 </div>

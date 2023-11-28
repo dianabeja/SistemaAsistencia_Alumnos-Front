@@ -40,7 +40,9 @@ export class InicioComponent implements OnInit {
           // Guardar la matrícula en el localStorage
           localStorage.setItem('matricula', this.estudianteData.matricula);
           if (this.estudianteData) {
-            QRCode.toDataURL(this.estudianteData.matricula)
+            // Se concatena la matrícula, el nombre y la frase '¡Presente!' para el QR
+            const qrData = `${this.estudianteData.matricula}, ${this.estudianteData.nombre}, Presente`;
+            QRCode.toDataURL(qrData)
               .then((url: string) => {
                 this.qrCodeUrl = url;
               })

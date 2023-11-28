@@ -8,7 +8,8 @@ import { Observable, catchError, retry, throwError } from 'rxjs';
 export class RegistroService {
   constructor(private http: HttpClient) {}
 
-  private apiURL = 'http://localhost:3000/api/v1/estudiantes/crearCuenta';
+  private apiURL =
+    'https://apialumnos-service-dianabeja.cloud.okteto.net/api/v1/estudiantes/crearCuenta';
 
   //Http Options
   httpOptions = {

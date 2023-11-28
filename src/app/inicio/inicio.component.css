@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
-  background-color: #f5f5f5; /* Gris claro para el fondo */
+  background-color: #f4f4f4; /* Gris claro para el fondo */
   height: 100vh; /* Altura completa de la pantalla */
   padding: 20px;
 }

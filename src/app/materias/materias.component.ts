@@ -32,6 +32,10 @@ export class MateriasComponent implements OnInit {
     if (token) {
       this.materiasService.obtenerNrcs(token).subscribe({
         next: (nrcs) => {
+          if (!nrcs || nrcs.nrcs.length === 0) {
+            this.materias = [];
+            return;
+          }
           this.materiasService.generarTokenNrcs(nrcs.nrcs).subscribe({
             next: (tokenRes) => {
               localStorage.setItem('materiasToken', tokenRes.token);
@@ -46,7 +50,10 @@ export class MateriasComponent implements OnInit {
             error: (err) => console.error('Error al generar token:', err),
           });
         },
-        error: (err) => console.error('Error al obtener NRCs:', err),
+        error: (err) => {
+          console.error('Error al obtener NRCs:', err);
+          this.materias = [];
+        },
       });
     }
   }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 import { NavDisplayService } from '../services/nav-display.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class NavBarComponent {
   navOpen = false; // Estado para el menú desplegable
   constructor(
     private router: Router,
-    public navDisplayService: NavDisplayService
+    public navDisplayService: NavDisplayService,
+    private authService: AuthService
   ) {}
 
   toggleNav() {
@@ -21,5 +23,6 @@ export class NavBarComponent {
   logout() {
     localStorage.clear(); // Limpia todo el almacenamiento local
     this.router.navigate(['/login']); // Redirige al usuario a la página de inicio de sesión
+    this.authService.logout();
   }
 }
